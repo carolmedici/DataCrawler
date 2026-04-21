@@ -416,3 +416,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+*.db
+*.db-shm
+*.db-wal
+bin/
+obj/
+.vs/
