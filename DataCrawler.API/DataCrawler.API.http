@@ -1,0 +1,6 @@
+@DataCrawler.API_HostAddress = http://localhost:5110
+
+GET {{DataCrawler.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
