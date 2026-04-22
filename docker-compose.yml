@@ -4,7 +4,9 @@ services:
       context: .
       dockerfile: DataCrawler.API/Dockerfile
     ports:
-      - "5000:80"
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - .:/app/data
     depends_on:
@@ -14,5 +16,7 @@ services:
     build:
       context: .
       dockerfile: DataCrawler.Worker/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - .:/app/data

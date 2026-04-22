@@ -10,11 +10,13 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI(options =>
+{   
+    options.SwaggerEndpoint("v1/swagger.json", "v1"); 
+    options.RoutePrefix = "swagger";
+});
+
 
 app.MapGet("/captures", async (AppDbContext db) =>
 {
@@ -22,5 +24,11 @@ app.MapGet("/captures", async (AppDbContext db) =>
 })
 .WithName("GetCaptures")
 .WithOpenApi();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated(); 
+}
 
 app.Run();
