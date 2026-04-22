@@ -1,14 +1,14 @@
 using Microsoft.EntityFrameworkCore;
-using DataCrawler.API.Models; 
+using DataCrawler.Shared.Models;
 
-namespace DataCrawler.API.Data;
+namespace DataCrawler.Shared.Data;
 
 public class AppDbContext : DbContext{
-    
-    public DbSet<CapturedData> Captures { get; set; } 
+  
+    public DbSet<CapturedData> Captures { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {      
+    {        
         options.UseSqlite("Data Source=../datacrawler.db");
     }
 }

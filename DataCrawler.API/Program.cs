@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using DataCrawler.API.Data;
-using DataCrawler.API.Models;
+using DataCrawler.Shared.Data;
+using DataCrawler.Shared.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,5 +1,5 @@
-using DataCrawler.Worker.Data;
-using DataCrawler.Worker.Models;
+using DataCrawler.Shared.Data;
+using DataCrawler.Shared.Models;
 using HtmlAgilityPack;
 
 namespace DataCrawler.Worker;

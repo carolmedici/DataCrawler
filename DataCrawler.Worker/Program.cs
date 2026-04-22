@@ -1,5 +1,5 @@
 using DataCrawler.Worker;
-using DataCrawler.Worker.Data;
+using DataCrawler.Shared.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = Host.CreateApplicationBuilder(args);

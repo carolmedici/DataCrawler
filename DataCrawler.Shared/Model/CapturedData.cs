@@ -1,4 +1,4 @@
-namespace DataCrawler.Worker.Models;
+namespace DataCrawler.Shared.Models;
 public class CapturedData
 {
     public int Id { get; set; }
